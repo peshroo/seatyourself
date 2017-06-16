@@ -1,8 +1,15 @@
-def index
-end
+class RestaurantsController < ApplicationController
 
-def show
-end
+  def index
+    @restaurants = Restaurant.all
+  end
 
-def create
+  def show
+    @restaurant = Restaurant.find(params[:id])
+  end
+
+  def create
+  end
+
+
 end
