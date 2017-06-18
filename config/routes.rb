@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   root 'restaurants#index'
   resources :restaurants
 
-  resource :users, only: [:new, :create]
+  resource :users#, only: [:new, :create]
 end
