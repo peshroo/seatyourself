@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @users = User.new
   end
 
   def new

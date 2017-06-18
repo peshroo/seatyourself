@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :restaurants
 
   # get '/users', to: 'users#new'
-  resource :users, only: [:new, :create]
+  resource :users   #, only: [:new, :create]
 end
