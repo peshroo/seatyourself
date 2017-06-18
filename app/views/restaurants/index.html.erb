@@ -1,4 +1,8 @@
+<h1>Seat Yourself</h1>
+
+<h2>All Restaurants</h2>
+
 <% @restaurants.each do |restaurant| %>
-  <p><%= restaurant.name %></p>
+  <p><%= link_to restaurant.name, restaurant_path(restaurant.id)%></p>
   <p><%= restaurant.address %></p>
 <% end %>
