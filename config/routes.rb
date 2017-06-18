@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root 'restaurants#index'
   resources :restaurants
 
+  # get '/users', to: 'users#new'
   resource :users, only: [:new, :create]
 end
