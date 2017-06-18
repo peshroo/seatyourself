@@ -5,4 +5,5 @@ Rails.application.routes.draw do
 
   # get '/users', to: 'users#new'
   resource :users   #, only: [:new, :create]
+  resource :sessions, only: [:new, :create, :destroy]
 end
