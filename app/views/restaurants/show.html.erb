@@ -1,4 +1,6 @@
 <%= link_to("Home", root_url) %>
 
-<p><%= @restaurant.name %></p>
-<p><%= @restaurant.address%></p>
+<h2><%= @restaurant.name %></h2>
+<p><%= @restaurant.address %>, <%= @restaurant.city %></p>
+
+<p><a href = "<%= @restaurant.menu %>">Click to view menu</p>
