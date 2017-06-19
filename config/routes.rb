@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resource :sessions, only: [:new, :create, :destroy]
 
   resource :reservations
+  resource :reservation
 end
