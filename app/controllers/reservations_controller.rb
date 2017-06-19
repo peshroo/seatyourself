@@ -38,6 +38,8 @@ class ReservationsController < ApplicationController
   def destroy
   end
 
+  private
+
   def reservation_params
     params.require(:reservation).permit(:name, :email, :party_size, :date, :time)
   end
