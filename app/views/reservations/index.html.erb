@@ -1,0 +1,7 @@
+<h1>Seat Yourself</h1>
+
+<h2>All Reservations | <%= link_to "View all reservations", reservations_path%></h2>
+
+<% @reservations.each do |reservation| %>
+  <p><%= link_to reservation.time, reservation_path(reservation.id)%></p>
+<% end %>
