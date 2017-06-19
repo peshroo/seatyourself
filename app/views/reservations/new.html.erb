@@ -1,7 +1,1 @@
-<h1>Create a Reservation</h1>
-<%= form_for @reservations do |f| %>
-
-  <div class="field">
-    <%= f.label :party_size %>
-    <%= f.integer :party_size %>
-  </div>
+<%= render partial: "form_for_res" %>

@@ -5,11 +5,4 @@
 
 <p><a href = "<%= @restaurant.menu %>">Menu</p>
 
-<h1>Create a Reservation</h1>
-  <%= form_for @reservations.each do |f| %>
-  <div class="field">
-    <%= f.label :party_size %>
-    <%= f.integer :party_size %>
-  </div>
-
-<% end %>
+  <%= render partial: "form_for_res" %>
