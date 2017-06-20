@@ -12,7 +12,7 @@ class Restaurant < ApplicationRecord
     end
     CAPACITY - total
   end
-
+  
   def open_closed(time)
     if time > OPENS && time < CLOSES
       true

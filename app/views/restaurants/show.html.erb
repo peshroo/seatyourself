@@ -5,11 +5,9 @@
 <%= @restaurant.price_range %> || <a href = "<%= @restaurant.menu %>">Menu</a> || <%= @restaurant.neighborhood %>
 <p><%= @restaurant.summary %><p></h3>
 
-
-<!-- - neighborhood, price range,
-summary, available time slots -->
-
-
+  <% flash.each do |k, v| %>
+      <div id="<%= k %>"><%= v %></div>
+    <% end %>
 
 
   <%= render partial: "form_for_res" %>

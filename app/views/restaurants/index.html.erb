@@ -1,6 +1,11 @@
+<% flash.each do |k, v| %>     
+    <div id="<%= k %>"><%= v %></div>
+  <% end %>
+
+
 <h1>Seat Yourself</h1>
 
-<h2>All Restaurants | <%= link_to "View all users", users_path%></h2>
+<h2>All Restaurants </h2>
 
 <% @restaurants.each do |restaurant| %>
   <p><%= link_to restaurant.name, restaurant_path(restaurant.id)%></p>

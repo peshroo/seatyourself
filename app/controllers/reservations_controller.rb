@@ -19,11 +19,12 @@ class ReservationsController < ApplicationController
     # @reservation = @restaurant.reservations.new(reservation_params)
     # @reservation.user = current_user
 
+    # require_login
     if @reservation.save
-      flash[:notice] = "You're reservation is for ________"
+      flash[:notice] = ["You're reservation is for #{@reservation.time}"]
       redirect_to restaurant_reservation_path(@restaurant, @reservation)
     else
-      flash[:notice] = "Reservation unable to be created. Please try again!"
+      flash[:notice] = ["Reservation unable to be created. Please try again!"]
       render :new
     end
   end
@@ -39,7 +40,7 @@ class ReservationsController < ApplicationController
   def destroy
   end
 
-  private
+private
 
   def reservation_params
     params.require(:reservation).permit(:name, :email, :party_size, :date, :time)
@@ -47,10 +48,10 @@ class ReservationsController < ApplicationController
 
   def require_login
     unless current_user
-      flash[:alert] = ["Must be logged in to make reservation."]
+      flash[:alert] = ["Sorry, you must be logged in to make reservation."]
       redirect_to root_path
     return
+    end
   end
-end
 
 end
