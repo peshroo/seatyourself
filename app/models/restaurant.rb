@@ -3,7 +3,7 @@ class Restaurant < ApplicationRecord
 
   CAPACITY = 20
 
-  def capacity_remaining(date, time)
+  def capacity_remaining(date, time)     #only matters for given date and time. (one hours blocks??)
     total = 0
     reservations.where(date: date, time: time).each do |reservation|  #every reso for that date/time
       total += reservation.party_size
