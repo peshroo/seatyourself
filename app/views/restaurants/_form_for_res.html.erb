@@ -1,5 +1,5 @@
 <h1>Create a Reservation</h1>
-<%= form_for @reservation do |f| %>
+<%= form_for [@restaurant, @reservation] do |f| %>
 
 <%= f.hidden_field :restaurant_id %>
 
