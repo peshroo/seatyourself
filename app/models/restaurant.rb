@@ -15,7 +15,7 @@ class Restaurant < ApplicationRecord
   #   if time > opens && time < closes
   #     return true
   #   else
-  #     errors.add(:restaurant_id, 'Sorry, the restaurant is over capacity at this time and date')
-  #
+  #     errors.add(:restaurant_id, 'Sorry, the restaurant is closed at that time')
+  
 
 end

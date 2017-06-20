@@ -6,6 +6,7 @@ class ReservationsController < ApplicationController
 
   def index
     @reservations = Reservation.all
+    # @restaurant = Restaurant.find(param[:restaurant_id])
   end
 
   def create
@@ -20,7 +21,7 @@ class ReservationsController < ApplicationController
 
     if @reservation.save
       flash[:notice] = "You're reservation is for ________"
-      redirect_to reservations_path
+      redirect_to reservations_path(@restaurant)
     else
       flash[:notice] = "Reservation unable to be created. Please try again!"
       render :new
