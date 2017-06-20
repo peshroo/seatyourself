@@ -6,26 +6,27 @@ class ReservationsController < ApplicationController
 
   def index
     @reservations = Reservation.all
+    # @restaurant = Restaurant.find(param[:restaurant_id])
   end
 
   def create
+
     @reservation = Reservation.new(reservation_params)
-    # @reservation.time = params[]
-    # @user.name = params[:user][:name]
-    # @user.email = params[:user][:email]
-    # @user.phone_number = params[:user][:phone_number]
-    # @user.party_size = params[:user][:party_size]
-    # @user.password = params[:user][:password]
-    # @user.password_confirmation = params[:user][:password_confirmation]
+    @restaurant = Restaurant.find(params[:id])
+    @reservation.restaurant = @restaurant        #@reservation.restaurant_id = @restaurant.id
+
+    # @restaurant = Restaurant.find(params[:id])
+    # @reservation = @restaurant.reservations.new(reservation_params)
+    # @reservation.user = current_user
+
     if @reservation.save
       flash[:notice] = "You're reservation is for ________"
-      redirect_to reservations_path
+      redirect_to reservations_path(@restaurant)
     else
       flash[:notice] = "Reservation unable to be created. Please try again!"
       render :new
     end
-
-end
+  end
 
   def edit
   end
@@ -49,7 +50,7 @@ end
       flash[:alert] = ["Must be logged in to make reservation."]
       redirect_to root_path
     return
-   end
   end
+end
 
 end
