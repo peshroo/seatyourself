@@ -4,9 +4,11 @@ Rails.application.routes.draw do
   resources :restaurants
 
   # get '/users', to: 'users#new'
-  resource :users   #, only: [:new, :create]
-  resource :sessions, only: [:new, :create, :destroy]
+  resources :users   #, only: [:new, :create]
+  resources :sessions, only: [:new, :create, :destroy]
 
-  resource :reservations
-  resource :reservation
+  resources :reservations
+
+  get '/reservation/:id' => 'reservations#show'
+
 end

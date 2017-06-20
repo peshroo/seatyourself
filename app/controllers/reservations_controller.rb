@@ -9,7 +9,6 @@ class ReservationsController < ApplicationController
   end
 
   def create
-
     @reservation = Reservation.new(reservation_params)
     # @reservation.time = params[]
     # @user.name = params[:user][:name]
@@ -20,13 +19,13 @@ class ReservationsController < ApplicationController
     # @user.password_confirmation = params[:user][:password_confirmation]
     if @reservation.save
       flash[:notice] = "You're reservation is for ________"
-      redirect_to "/reservation/show"
+      redirect_to reservations_path
     else
       flash[:notice] = "Reservation unable to be created. Please try again!"
       render :new
     end
 
-  end
+end
 
   def edit
   end
@@ -50,6 +49,7 @@ class ReservationsController < ApplicationController
       flash[:alert] = ["Must be logged in to make reservation."]
       redirect_to root_path
     return
+    end
   end
 
 end
