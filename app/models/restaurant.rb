@@ -11,12 +11,11 @@ class Restaurant < ApplicationRecord
     CAPACITY - total
   end
 
-  def at_capacity?
-    if restaurant.capacity_remaining(date, time) >= party_size
-      return true
-    else
-      errors.add(:restaurant_id, 'Sorry, the restaurant is at full capacity at that date and time.')
-    end
-  end
+  # def open?(time)
+  #   if time > opens && time < closes
+  #     return true
+  #   else
+  #     errors.add(:restaurant_id, 'Sorry, the restaurant is over capacity at this time and date')
+  #
 
 end
