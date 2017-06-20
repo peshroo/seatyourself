@@ -35,6 +35,7 @@ class ReservationsController < ApplicationController
   def show
     require_login
     @reservation = Reservation.find(params[:id])
+    @restaurant = Restaurant.find(params[:restaurant_id])
   end
 
   def destroy
