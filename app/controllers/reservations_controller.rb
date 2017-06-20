@@ -49,11 +49,7 @@ end
       flash[:alert] = ["Must be logged in to make reservation."]
       redirect_to root_path
     return
-<<<<<<< HEAD
     end
-=======
-   end
->>>>>>> e7a6f361715ebd2bce4beafd4d43892446b49b60
   end
 
 end
