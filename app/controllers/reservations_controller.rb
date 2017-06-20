@@ -9,9 +9,14 @@ class ReservationsController < ApplicationController
   end
 
   def create
+
     @reservation = Reservation.new(reservation_params)
     @restaurant = Restaurant.find(params[:id])
-    @reservation.restaurant = @restaurant    #@reservation.restaurant_id = @restaurant.id
+    @reservation.restaurant = @restaurant        #@reservation.restaurant_id = @restaurant.id
+
+    # @restaurant = Restaurant.find(params[:id])
+    # @reservation = @restaurant.reservations.new(reservation_params)
+    # @reservation.user = current_user
 
     if @reservation.save
       flash[:notice] = "You're reservation is for ________"
