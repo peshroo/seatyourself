@@ -20,7 +20,7 @@ class ReservationsController < ApplicationController
     # @user.password_confirmation = params[:user][:password_confirmation]
     if @reservation.save
       flash[:notice] = "You're reservation is for ________"
-      redirect_to "/reservation"
+      redirect_to "/reservation/show"
     else
       flash[:notice] = "Reservation unable to be created. Please try again!"
       render :new
@@ -33,6 +33,7 @@ class ReservationsController < ApplicationController
 
   def show
     @reservation = Reservation.find(params[:id])
+
   end
 
   def destroy
