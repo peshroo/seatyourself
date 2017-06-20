@@ -1,8 +1,15 @@
 <%= link_to("Home", root_url) %>
 
 <h2><%= @restaurant.name %></h2>
-<p><%= @restaurant.address %>, <%= @restaurant.city %></p>
+<h3><p><%= @restaurant.address %>, <%= @restaurant.city %></p>
+<%= @restaurant.price_range %> || <a href = "<%= @restaurant.menu %>">Menu</a> || <%= @restaurant.neighborhood %>
+<p><%= @restaurant.summary %><p></h3>
 
-<p><a href = "<%= @restaurant.menu %>">Menu</p></a>
+
+<!-- - neighborhood, price range,
+summary, available time slots -->
+
+
+
 
   <%= render partial: "form_for_res" %>

@@ -50,7 +50,7 @@ class ReservationsController < ApplicationController
       flash[:alert] = ["Must be logged in to make reservation."]
       redirect_to root_path
     return
-    end
   end
+end
 
 end
